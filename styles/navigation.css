@@ -1,4 +1,6 @@
-/* ===== NAVIGATION ===== */
+/* ========================================
+   NAVIGATION
+   ======================================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -66,18 +68,13 @@
 .nav-menu a:hover {
     color: var(--text-primary);
 }
-
 .nav-menu a:hover::after {
     width: 100%;
 }
 
-.nav-menu a:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 4px;
-    border-radius: 4px;
-}
-
-/* ===== MOBILE NAV TOGGLE ===== */
+/* ========================================
+   MOBILE NAV TOGGLE
+   ======================================== */
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -89,11 +86,9 @@
     border-radius: 6px;
     transition: background var(--transition);
 }
-
 .nav-toggle:hover {
     background: rgba(255, 255, 255, 0.05);
 }
-
 .nav-toggle span {
     display: block;
     width: 24px;
@@ -102,72 +97,12 @@
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .nav-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
-
 .nav-toggle.active span:nth-child(2) {
     opacity: 0;
 }
-
 .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ===== RESPONSIVE NAV ===== */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(16px);
-        padding: 1rem 24px;
-        flex-direction: column;
-        gap: 0.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        transform: translateY(-120%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .nav-menu.open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-menu a {
-        padding: 0.75rem 0;
-        width: 100%;
-        font-size: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .nav-menu a::after {
-        display: none;
-    }
-
-    .nav-menu a:hover {
-        color: var(--accent-primary);
-    }
-
-    .nav-toggle {
-        display: flex;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-container {
-        padding: 0 16px;
-        height: 60px;
-    }
-    
-    .nav-menu {
-        top: 60px;
-        padding: 0.75rem 16px;
-    }
 }

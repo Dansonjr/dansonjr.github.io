@@ -1,60 +1,63 @@
 /**
- * Main JavaScript
- * Initializes all modules and handles page interactions
+ * Main Entry Point
+ * Initializes all modules and handles page load
  */
 
 (function() {
     'use strict';
 
-    // ===== Document Ready =====
-    function init() {
+    // ===== Console Identity =====
+    function showConsoleIdentity() {
         console.log('🚀 Portfolio initialized');
         console.log('📡 Live at: https://dansonjr.github.io');
-        console.log('👨‍💻 Built with ❤️ for Software Engineering & IT Support');
-        
-        // ===== Intersection Observer for Animations =====
-        if ('IntersectionObserver' in window) {
-            const sections = document.querySelectorAll('section');
-            
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
+        console.log('👨‍💻 Built for Software Engineering & IT Roles');
+        console.log('🎯 Focus: Python, AWS, React, Cloud Infrastructure');
+        console.log('📦 Powered by the GitHub API');
+    }
 
-            sections.forEach(function(section) {
-                observer.observe(section);
-            });
-        }
-
-        // ===== Add smooth class to body when fonts are loaded =====
+    // ===== Check for Font Loading =====
+    function handleFontLoading() {
         if ('fonts' in document) {
             document.fonts.ready.then(function() {
                 document.body.classList.add('fonts-loaded');
             });
         }
+    }
 
-        // ===== Handle console warnings for external links =====
+    // ===== External Link Handler =====
+    function handleExternalLinks() {
         document.querySelectorAll('a[target="_blank"]').forEach(function(link) {
             link.setAttribute('rel', 'noopener noreferrer');
         });
     }
 
-    // ===== Run when DOM is ready =====
+    // ===== Service Worker Registration (Optional) =====
+    function registerServiceWorker() {
+        // Uncomment to enable service worker for offline support
+        // if ('serviceWorker' in navigator) {
+        //     navigator.serviceWorker.register('/sw.js')
+        //         .then(function(registration) {
+        //             console.log('Service Worker registered successfully');
+        //         })
+        //         .catch(function(error) {
+        //             console.log('Service Worker registration failed:', error);
+        //         });
+        // }
+    }
+
+    // ===== Initialize =====
+    function init() {
+        showConsoleIdentity();
+        handleFontLoading();
+        handleExternalLinks();
+        // registerServiceWorker(); // Uncomment to enable
+    }
+
+    // Run when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
-        // DOM already loaded
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            init();
-        } else {
-            document.addEventListener('DOMContentLoaded', init);
-        }
+        init();
     }
 
 })();

@@ -1,62 +1,162 @@
-/* ===== ADDITIONAL RESPONSIVE FIXES ===== */
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
 
-/* Fix for mobile nav scroll */
+/* Tablet */
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(16px);
+        padding: 1rem 24px;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-menu a {
+        padding: 0.75rem 0;
+        width: 100%;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .nav-menu a::after {
+        display: none;
+    }
+    .nav-toggle {
+        display: flex;
+    }
     body.nav-open {
         overflow: hidden;
     }
-}
 
-/* Smooth hover states for touch devices */
-@media (hover: hover) {
-    .project-card:hover,
-    .skill-category:hover,
-    .contact-card:hover,
-    .edu-card:hover {
-        transform: translateY(-4px);
-    }
-}
-
-@media (hover: none) {
-    .project-card:active,
-    .skill-category:active,
-    .contact-card:active,
-    .edu-card:active {
-        transform: scale(0.98);
-    }
-}
-
-/* ===== ACCESSIBILITY ===== */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* ===== FOCUS VISIBLE ===== */
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
-}
-
-/* ===== PRINT STYLES ===== */
-@media print {
-    .navbar {
-        display: none;
-    }
-    
     #hero {
+        padding: 100px 0 40px;
         min-height: auto;
-        padding: 2rem 0;
     }
-    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .education-grid,
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
     section {
-        padding: 2rem 0 !important;
-        break-inside: avoid;
+        padding: 3rem 0;
+    }
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    .hero-container {
+        padding: 0 16px;
+    }
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+        width: 100%;
+    }
+    .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    .nav-container {
+        padding: 0 16px;
+        height: 60px;
+    }
+    .nav-menu {
+        top: 60px;
+        padding: 0.75rem 16px;
+    }
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .stat-item {
+        padding: 0.75rem;
+    }
+    .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    .project-card {
+        padding: 1rem;
+    }
+    .contact-card {
+        padding: 1rem;
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .fade-up {
+        opacity: 1;
+        transform: none;
     }
 }

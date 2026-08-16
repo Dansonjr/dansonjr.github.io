@@ -1,5 +1,5 @@
 /**
- * Navigation Controls
+ * Navigation Module
  * Handles mobile toggle, scroll behavior, and smooth scroll
  */
 
@@ -13,7 +13,9 @@
     const body = document.body;
 
     // ===== Mobile Nav Toggle =====
-    if (navToggle && navMenu) {
+    function initMobileNav() {
+        if (!navToggle || !navMenu) return;
+
         navToggle.addEventListener('click', function() {
             const isOpen = navMenu.classList.toggle('open');
             this.classList.toggle('active');
@@ -48,20 +50,17 @@
     }
 
     // ===== Navbar Shadow on Scroll =====
-    let lastScrollY = 0;
-    let ticking = false;
+    function initNavbarShadow() {
+        if (!navbar) return;
 
-    if (navbar) {
+        let ticking = false;
+
         function updateNavbarShadow() {
-            const currentScrollY = window.scrollY;
-            
-            if (currentScrollY > 50) {
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
-            lastScrollY = currentScrollY;
             ticking = false;
         }
 
@@ -79,36 +78,55 @@
     }
 
     // ===== Smooth Scroll for Anchor Links =====
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
 
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                
-                const navHeight = navbar ? navbar.offsetHeight : 0;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    const navHeight = navbar ? navbar.offsetHeight : 0;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-    });
+    }
 
-    // ===== Fix for iOS Safari 100vh issue =====
-    function setHeroHeight() {
+    // ===== iOS Safari 100vh Fix =====
+    function initHeroHeightFix() {
         const hero = document.getElementById('hero');
         if (hero) {
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', vh + 'px');
+            
+            window.addEventListener('resize', function() {
+                const newVh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', newVh + 'px');
+            }, { passive: true });
         }
     }
 
-    setHeroHeight();
-    window.addEventListener('resize', setHeroHeight, { passive: true });
+    // ===== Initialize =====
+    function init() {
+        initMobileNav();
+        initNavbarShadow();
+        initSmoothScroll();
+        initHeroHeightFix();
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 
 })();
