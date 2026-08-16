@@ -1,81 +1,62 @@
-/* ===== RESPONSIVE STYLES ===== */
+/* ===== ADDITIONAL RESPONSIVE FIXES ===== */
 
-/* Tablet */
-@media (max-width: 780px) {
-    .about-grid { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .skills-grid { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .proj-grid { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .contact-grid { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .section-tag { 
-        display: none; 
+/* Fix for mobile nav scroll */
+@media (max-width: 768px) {
+    body.nav-open {
+        overflow: hidden;
     }
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-    .btn { 
-        padding: 10px 14px; 
-        font-size: 11px; 
-    }
-    
-    .sysinfo-row { 
-        flex-wrap: wrap; 
-    }
-    
-    .sysinfo-row .v { 
-        text-align: left; 
-        width: 100%; 
-    }
-    
-    .proj-top { 
-        flex-wrap: wrap; 
-    }
-    
-    .contact-grid { 
-        gap: 10px; 
-    }
-    
-    .contact-card { 
-        padding: 14px; 
-    }
-    
-    section { 
-        padding: 40px 0; 
-    }
-    
-    h2 { 
-        font-size: 20px; 
+/* Smooth hover states for touch devices */
+@media (hover: hover) {
+    .project-card:hover,
+    .skill-category:hover,
+    .contact-card:hover,
+    .edu-card:hover {
+        transform: translateY(-4px);
     }
 }
 
-/* Small phones */
-@media (max-width: 360px) {
-    .wrap { 
-        padding: 0 16px; 
+@media (hover: none) {
+    .project-card:active,
+    .skill-category:active,
+    .contact-card:active,
+    .edu-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== FOCUS VISIBLE ===== */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .navbar {
+        display: none;
     }
     
-    .hero { 
-        padding: 32px 0; 
+    #hero {
+        min-height: auto;
+        padding: 2rem 0;
     }
     
-    .cta-row { 
-        flex-direction: column; 
-        align-items: stretch; 
-    }
-    
-    .btn { 
-        justify-content: center; 
+    section {
+        padding: 2rem 0 !important;
+        break-inside: avoid;
     }
 }

@@ -3,105 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rabindra Khadka — Operations &amp; IT Support</title>
-    <meta name="description" content="Rabindra Khadka — IT Support, Operations &amp; Cloud/DevOps portfolio. ITIL, Zendesk, AWS CloudFormation, Python, Oracle WMS.">
-    <meta property="og:title" content="Rabindra Khadka — Operations &amp; IT Support">
-    <meta property="og:description" content="Operations &amp; IT Support professional building cloud/DevOps skills. ITIL · Zendesk · AWS · Python.">
+    <title>Rabindra Khadka — Software Engineer & IT Support</title>
+    <meta name="description" content="Rabindra Khadka — Software Engineer & IT Support professional. B.IT graduate, AWS, Python, ITIL certified.">
+    <meta property="og:title" content="Rabindra Khadka — Software Engineer & IT Support">
+    <meta property="og:description" content="Software Engineer & IT Support professional. B.IT graduate with cloud and DevOps skills.">
     <meta property="og:url" content="https://dansonjr.github.io">
     <meta property="og:type" content="website">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
     
-    <!-- ====== FONTS ====== -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- ====== STYLES ====== -->
+    <!-- Styles -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/navigation.css">
     <link rel="stylesheet" href="styles/hero.css">
-    <link rel="stylesheet" href="styles/console.css">
     <link rel="stylesheet" href="styles/sections.css">
     <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
 
     <!-- ====== NAVIGATION ====== -->
-    <div class="statusbar" id="navbar">
-        <div class="wrap statusbar-inner">
-            <div class="prompt">rk<span>@</span>ops<span>:~$</span></div>
-            <nav class="navlinks" id="navLinks">
-                <a href="#about"><span class="flag">--</span><span class="label">about</span></a>
-                <a href="#skills"><span class="flag">--</span><span class="label">skills</span></a>
-                <a href="#projects"><span class="flag">--</span><span class="label">projects</span></a>
-                <a href="#experience"><span class="flag">--</span><span class="label">experience</span></a>
-                <a href="#contact"><span class="flag">--</span><span class="label">contact</span></a>
-                <span class="clock" id="clock">SYD --:--</span>
-            </nav>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">👨‍💻 RK</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-    </div>
+    </header>
 
     <!-- ====== HERO SECTION ====== -->
-    <div class="wrap">
-        <section class="hero" id="hero">
-            <div>
-                <div class="eyebrow"><span class="dot pulse"></span> SYSTEMS OPERATIONAL — SYDNEY, NSW</div>
-                <h1 class="headline">I keep operations running — <em>on the floor, and in the cloud.</em></h1>
-                <p class="hero-sub">
-                    <b>Rabindra Khadka.</b> IT Support &amp; Operations professional with 3+ years leading frontline
-                    and warehouse teams, now building toward cloud &amp; DevOps — ITIL 4, Zendesk, Oracle WMS, AWS
-                    CloudFormation, and Python.
+    <section id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">🟢 Available for opportunities</div>
+                <h1>Rabindra Khadka</h1>
+                <p class="hero-subtitle">Software Engineer · IT Support Specialist · Cloud Enthusiast</p>
+                <p class="hero-description">
+                    B.IT graduate with hands-on experience in <strong>software development, IT support,</strong> 
+                    and <strong>cloud infrastructure</strong>. Building reliable, scalable solutions with Python, 
+                    AWS, and modern web technologies.
                 </p>
-                <div class="cta-row">
-                    <a class="btn btn-solid" href="#projects">View projects</a>
-                    <a class="btn btn-outline" href="assets/Rabindra_Khadka_Resume.pdf" download>Download résumé</a>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-secondary">Get in Touch</a>
                 </div>
             </div>
-
-            <div class="console" aria-hidden="true">
-                <div class="console-head">
-                    <span>ops-log — live</span>
-                    <div class="lights"><i></i><i></i><i></i></div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Years Experience</span>
                 </div>
-                <div class="console-body" id="consoleBody"></div>
-                <div class="console-foot">
-                    <span>uptime <b>3y 2m</b></span>
-                    <span>queue <b>0 open</b></span>
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Projects Deployed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Problem Solving</span>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <!-- ====== ABOUT SECTION ====== -->
     <section id="about">
-        <div class="wrap">
-            <div class="section-head">
-                <span class="section-num">01</span>
-                <h2>About</h2>
-            </div>
+        <div class="container">
+            <h2>About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p>
-                        I lead operations and warehouse teams at <b>The Good Guys, Alexandria</b> — scheduling, inventory,
-                        vendor and procurement management across a $5M+ asset pool, and the customer-facing systems that
-                        keep a busy retail floor running.
+                        I'm a <strong>Bachelor of Information Technology</strong> graduate from 
+                        <strong>Federation University</strong> with a passion for software engineering 
+                        and IT operations. I bring a unique blend of development skills and hands-on 
+                        IT support experience.
                     </p>
                     <p>
-                        Alongside that, I hold a <b>Bachelor of Information Technology</b> and I'm building hands-on cloud
-                        and DevOps skills in my own time — AWS infrastructure, Python scripting, and a self-directed
-                        project log. This site is where those two sides meet.
+                        My background includes <strong>software development</strong> (Python, JavaScript, 
+                        React, Node.js), <strong>cloud infrastructure</strong> (AWS, CloudFormation, RDS), 
+                        and <strong>IT support</strong> (ITIL certified, Zendesk, Windows/M365). 
+                        I thrive in environments where I can build and maintain systems that people rely on.
+                    </p>
+                    <p>
+                        Currently exploring roles in <strong>software engineering</strong> and 
+                        <strong>IT support</strong> where I can apply my technical skills and 
+                        problem-solving mindset.
                     </p>
                 </div>
-                <div class="sysinfo">
-                    <div class="sysinfo-row"><span class="k">location</span><span class="v">Sydney, NSW, AU</span></div>
-                    <div class="sysinfo-row"><span class="k">focus</span><span class="v">IT Support · Ops · Cloud</span></div>
-                    <div class="sysinfo-row"><span class="k">education</span><span class="v">B.IT — Federation University</span></div>
-                    <div class="sysinfo-row"><span class="k">certification</span><span class="v">ITIL 4 Foundation</span></div>
-                    <div class="sysinfo-row"><span class="k">in progress</span><span class="v">CompTIA A+ · MS-900 · AWS SAA</span></div>
-                    <div class="sysinfo-row"><span class="k">status</span><span class="v" style="color:var(--teal)">open to opportunities</span></div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">🎓</span>
+                        <div>
+                            <strong>B.IT Graduate</strong>
+                            <span>Federation University</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🛠️</span>
+                        <div>
+                            <strong>ITIL 4 Certified</strong>
+                            <span>Service Management</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">☁️</span>
+                        <div>
+                            <strong>AWS Fundamentals</strong>
+                            <span>CloudFormation, RDS, EC2</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🐍</span>
+                        <div>
+                            <strong>Python Developer</strong>
+                            <span>Automation, Backend, Scripting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== EDUCATION SECTION ====== -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-content">
+                        <h3>Bachelor of Information Technology</h3>
+                        <p class="edu-org">Federation University, Australia</p>
+                        <p class="edu-desc">
+                            Comprehensive IT degree with focus on software development, 
+                            database management, networking, and cloud computing.
+                        </p>
+                        <div class="edu-keywords">
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>SQL</span>
+                            <span>AWS</span>
+                            <span>Data Structures</span>
+                            <span>Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="edu-card">
+                    <div class="edu-icon">📜</div>
+                    <div class="edu-content">
+                        <h3>ITIL 4 Foundation</h3>
+                        <p class="edu-org">AXELOS</p>
+                        <p class="edu-desc">
+                            Service management certification covering IT service delivery, 
+                            incident management, and continuous improvement.
+                        </p>
+                        <div class="edu-keywords">
+                            <span>ITIL</span>
+                            <span>Service Desk</span>
+                            <span>Incident Management</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-card">
+                    <div class="edu-icon">📚</div>
+                    <div class="edu-content">
+                        <h3>In Progress</h3>
+                        <p class="edu-org">Professional Development</p>
+                        <p class="edu-desc">
+                            Continuously learning and earning certifications to stay current 
+                            with industry trends and technologies.
+                        </p>
+                        <div class="edu-keywords">
+                            <span>CompTIA A+</span>
+                            <span>MS-900</span>
+                            <span>AWS SAA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,41 +199,40 @@
 
     <!-- ====== SKILLS SECTION ====== -->
     <section id="skills">
-        <div class="wrap">
-            <div class="section-head">
-                <span class="section-num">02</span>
-                <h2>Skills</h2>
-                <span class="section-tag">3 modules</span>
-            </div>
+        <div class="container">
+            <h2>Skills</h2>
             <div class="skills-grid">
-                <div class="skill-mod">
-                    <div class="skill-mod-head">🖥️ SUPPORT &amp; ITSM</div>
+                <div class="skill-category">
+                    <h3>💻 Software Development</h3>
                     <ul>
-                        <li>ITIL 4 Foundation</li>
-                        <li>Zendesk</li>
-                        <li>Windows &amp; Microsoft 365</li>
-                        <li>Citrix-hosted apps</li>
-                        <li>POS &amp; payment systems</li>
-                    </ul>
-                </div>
-                <div class="skill-mod">
-                    <div class="skill-mod-head">☁️ CLOUD &amp; DEVOPS</div>
-                    <ul>
-                        <li>AWS CloudFormation</li>
-                        <li>AWS RDS (PostgreSQL)</li>
                         <li>Python</li>
-                        <li>Git &amp; GitHub</li>
-                        <li>Azure fundamentals</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Node.js</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>REST APIs</li>
                     </ul>
                 </div>
-                <div class="skill-mod">
-                    <div class="skill-mod-head">📊 OPERATIONS &amp; DATA</div>
+                <div class="skill-category">
+                    <h3>☁️ Cloud & DevOps</h3>
                     <ul>
+                        <li>AWS (EC2, RDS, S3)</li>
+                        <li>CloudFormation</li>
+                        <li>Git & GitHub</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>Docker</li>
+                        <li>Linux Administration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🛠️ IT Support</h3>
+                    <ul>
+                        <li>ITIL 4 Framework</li>
+                        <li>Zendesk</li>
+                        <li>Windows & M365</li>
+                        <li>Active Directory</li>
                         <li>Oracle WMS</li>
                         <li>Power BI</li>
-                        <li>Advanced Excel</li>
-                        <li>Zebra RF / PDA scanning</li>
-                        <li>Procurement &amp; vendor mgmt</li>
                     </ul>
                 </div>
             </div>
@@ -152,83 +241,103 @@
 
     <!-- ====== PROJECTS SECTION ====== -->
     <section id="projects">
-        <div class="wrap">
-            <div class="section-head">
-                <span class="section-num">03</span>
-                <h2>Projects</h2>
-                <span class="section-tag">github.com/Dansonjr</span>
+        <div class="container">
+            <h2>Projects</h2>
+            <p class="section-subtitle">Real projects built with Python, AWS, and modern technologies</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🐾</span>
+                        <span class="project-status">In Progress</span>
+                    </div>
+                    <h3>PetPal</h3>
+                    <p>A social platform for pet owners with feed, matching, chat, and full authentication.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <a href="https://github.com/Dansonjr/PetPal" target="_blank" class="project-link">View Repository →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">☁️</span>
+                        <span class="project-status project-deployed">Deployed</span>
+                    </div>
+                    <h3>CloudFormation VPC-RDS</h3>
+                    <p>Infrastructure as code — automated AWS VPC and PostgreSQL RDS deployment.</p>
+                    <div class="project-tech">
+                        <span>AWS</span>
+                        <span>CloudFormation</span>
+                        <span>IaC</span>
+                    </div>
+                    <a href="https://github.com/Dansonjr/cloudformation-vpc-rds" target="_blank" class="project-link">View Repository →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🐍</span>
+                        <span class="project-status project-deployed">Deployed</span>
+                    </div>
+                    <h3>RDS Python Connection</h3>
+                    <p>Python script for secure connection and query execution on AWS RDS PostgreSQL.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>AWS RDS</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <a href="https://github.com/Dansonjr/rds-python-connection" target="_blank" class="project-link">View Repository →</a>
+                </div>
             </div>
-            <div class="proj-grid">
-                <div class="proj-card">
-                    <div class="proj-top">
-                        <span class="proj-name">🐾 PetPal</span>
-                        <span class="proj-status">BUILDING</span>
-                    </div>
-                    <p class="proj-desc">A social platform for pet owners — feed, matching, chat and friends, with a full onboarding and login flow.</p>
-                    <div class="proj-stack">React · Node.js · PostgreSQL</div>
-                    <a class="proj-link" href="https://github.com/Dansonjr/PetPal" target="_blank" rel="noopener">→ view repo</a>
-                </div>
-
-                <div class="proj-card">
-                    <div class="proj-top">
-                        <span class="proj-name">☁️ cloudformation-vpc-rds</span>
-                        <span class="proj-status">DEPLOYED</span>
-                    </div>
-                    <p class="proj-desc">A CloudFormation template that provisions a VPC and a PostgreSQL RDS instance as reusable infrastructure-as-code.</p>
-                    <div class="proj-stack">AWS · CloudFormation · IaC</div>
-                    <a class="proj-link" href="https://github.com/Dansonjr/cloudformation-vpc-rds" target="_blank" rel="noopener">→ view repo</a>
-                </div>
-
-                <div class="proj-card">
-                    <div class="proj-top">
-                        <span class="proj-name">🐍 rds-python-connection</span>
-                        <span class="proj-status">DEPLOYED</span>
-                    </div>
-                    <p class="proj-desc">A Python script that connects to and queries an AWS RDS PostgreSQL instance.</p>
-                    <div class="proj-stack">Python · AWS RDS · PostgreSQL</div>
-                    <a class="proj-link" href="https://github.com/Dansonjr/rds-python-connection" target="_blank" rel="noopener">→ view repo</a>
-                </div>
+            <div class="projects-cta">
+                <a href="https://github.com/Dansonjr" target="_blank" class="btn-primary">View All Projects on GitHub →</a>
             </div>
         </div>
     </section>
 
     <!-- ====== EXPERIENCE SECTION ====== -->
     <section id="experience">
-        <div class="wrap">
-            <div class="section-head">
-                <span class="section-num">04</span>
-                <h2>Experience</h2>
-            </div>
-            <div class="log">
-                <div class="log-entry">
-                    <div class="log-meta">Nov 2023 — Present</div>
-                    <div class="log-title">Operations Manager</div>
-                    <div class="log-org">The Good Guys, Alexandria</div>
-                    <ul class="log-bullets">
-                        <li>Directs daily operations, resource allocation and scheduling across the store</li>
-                        <li>Improved processing throughput 40% via Power BI dashboards linked to scheduling</li>
-                        <li>Manages procurement across a $5M+ asset pool, holding inventory variance under $3,000</li>
-                    </ul>
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+                <div class="exp-item">
+                    <div class="exp-date">Nov 2023 — Present</div>
+                    <div class="exp-content">
+                        <h3>Operations Manager</h3>
+                        <p class="exp-org">The Good Guys, Alexandria</p>
+                        <ul>
+                            <li>Lead daily operations, resource allocation, and team scheduling across the store</li>
+                            <li>Improved processing throughput 40% through data-driven decisions (Power BI dashboards)</li>
+                            <li>Manage procurement across $5M+ asset pool, maintaining inventory variance under $3,000</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="log-entry">
-                    <div class="log-meta">Aug 2022 — Nov 2023</div>
-                    <div class="log-title">Warehouse Team Leader</div>
-                    <div class="log-org">The Good Guys, Alexandria</div>
-                    <ul class="log-bullets">
-                        <li>Ran inbound receipt and put-away on Oracle WMS with Zebra RF/PDA scanning</li>
-                        <li>Raised and tracked damage/shortage claims through Solvup and RLO</li>
-                        <li>Moved team logging from manual to digital, lifting record-keeping accuracy 25%</li>
-                    </ul>
+                <div class="exp-item">
+                    <div class="exp-date">Aug 2022 — Nov 2023</div>
+                    <div class="exp-content">
+                        <h3>Warehouse Team Leader</h3>
+                        <p class="exp-org">The Good Guys, Alexandria</p>
+                        <ul>
+                            <li>Managed inbound receipt and put-away on Oracle WMS with Zebra RF/PDA scanning</li>
+                            <li>Tracked damage/shortage claims through Solvup and RLO systems</li>
+                            <li>Digitized team logging, improving record-keeping accuracy by 25%</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="log-entry">
-                    <div class="log-meta">Jan 2022 — Jul 2022</div>
-                    <div class="log-title">Junior Data Analyst</div>
-                    <div class="log-org">Paxform Pty Ltd, Parramatta</div>
-                    <ul class="log-bullets">
-                        <li>Built Power BI and Excel dashboards turning raw data into schedules for frontline teams</li>
-                    </ul>
+                <div class="exp-item">
+                    <div class="exp-date">Jan 2022 — Jul 2022</div>
+                    <div class="exp-content">
+                        <h3>Junior Data Analyst</h3>
+                        <p class="exp-org">Paxform Pty Ltd, Parramatta</p>
+                        <ul>
+                            <li>Built Power BI and Excel dashboards for operational scheduling and reporting</li>
+                            <li>Automated reporting workflows, saving 5+ hours per week</li>
+                            <li>Supported IT team with data migration and system integration projects</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,31 +345,32 @@
 
     <!-- ====== CONTACT SECTION ====== -->
     <section id="contact">
-        <div class="wrap">
-            <div class="section-head">
-                <span class="section-num">05</span>
-                <h2>Contact</h2>
-            </div>
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p class="contact-desc">
+                I'm open to <strong>software engineering</strong> and <strong>IT support</strong> roles. 
+                Feel free to reach out!
+            </p>
             <div class="contact-grid">
-                <a class="contact-card" href="mailto:rabin02khadka@gmail.com">
-                    <div class="contact-icon">✉</div>
+                <a href="mailto:rabin02khadka@gmail.com" class="contact-card">
+                    <span class="contact-icon">✉️</span>
                     <div>
-                        <div class="contact-label">EMAIL</div>
-                        <div class="contact-value">rabin02khadka@gmail.com</div>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">rabin02khadka@gmail.com</span>
                     </div>
                 </a>
-                <a class="contact-card" href="https://linkedin.com/in/rabindra01" target="_blank" rel="noopener">
-                    <div class="contact-icon">in</div>
+                <a href="https://linkedin.com/in/rabindra01" target="_blank" class="contact-card">
+                    <span class="contact-icon">💼</span>
                     <div>
-                        <div class="contact-label">LINKEDIN</div>
-                        <div class="contact-value">/in/rabindra01</div>
+                        <span class="contact-label">LinkedIn</span>
+                        <span class="contact-value">/in/rabindra01</span>
                     </div>
                 </a>
-                <a class="contact-card" href="https://github.com/Dansonjr" target="_blank" rel="noopener">
-                    <div class="contact-icon">⌥</div>
+                <a href="https://github.com/Dansonjr" target="_blank" class="contact-card">
+                    <span class="contact-icon">🐙</span>
                     <div>
-                        <div class="contact-label">GITHUB</div>
-                        <div class="contact-value">/Dansonjr</div>
+                        <span class="contact-label">GitHub</span>
+                        <span class="contact-value">/Dansonjr</span>
                     </div>
                 </a>
             </div>
@@ -268,16 +378,14 @@
     </section>
 
     <!-- ====== FOOTER ====== -->
-    <div class="wrap">
-        <footer>
-            <span>© 2026 Rabindra Khadka</span>
-            <span>built with plain HTML, CSS &amp; JS — hosted on GitHub Pages</span>
-        </footer>
-    </div>
+    <footer>
+        <div class="container">
+            <p>© 2026 Rabindra Khadka · Software Engineer & IT Support</p>
+            <p class="footer-tech">Built with ❤️ on GitHub Pages</p>
+        </div>
+    </footer>
 
     <!-- ====== JAVASCRIPT ====== -->
-    <script src="js/clock.js"></script>
-    <script src="js/console.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/main.js"></script>
 

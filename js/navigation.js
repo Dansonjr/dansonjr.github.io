@@ -1,33 +1,84 @@
 /**
  * Navigation Controls
- * Handles mobile toggle, smooth scroll, and navbar shadow
+ * Handles mobile toggle, scroll behavior, and smooth scroll
  */
 
 (function() {
     'use strict';
 
-    // ===== MOBILE NAV TOGGLE =====
+    // ===== DOM Elements =====
     const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
+    const navMenu = document.getElementById('navMenu');
+    const navbar = document.getElementById('navbar');
+    const body = document.body;
 
-    if (navToggle && navLinks) {
+    // ===== Mobile Nav Toggle =====
+    if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('open');
+            const isOpen = navMenu.classList.toggle('open');
             this.classList.toggle('active');
+            body.classList.toggle('nav-open');
+            
+            // Update aria-label
+            this.setAttribute('aria-label', 
+                isOpen ? 'Close navigation menu' : 'Open navigation menu'
+            );
         });
 
         // Close menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(function(link) {
+        navMenu.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
-                navLinks.classList.remove('open');
-                if (navToggle) {
-                    navToggle.classList.remove('active');
-                }
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('active');
+                body.classList.remove('nav-open');
+                navToggle.setAttribute('aria-label', 'Open navigation menu');
             });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+                navMenu.classList.remove('open');
+                navToggle.classList.remove('active');
+                body.classList.remove('nav-open');
+                navToggle.setAttribute('aria-label', 'Open navigation menu');
+                navToggle.focus();
+            }
         });
     }
 
-    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    // ===== Navbar Shadow on Scroll =====
+    let lastScrollY = 0;
+    let ticking = false;
+
+    if (navbar) {
+        function updateNavbarShadow() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateNavbarShadow();
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Initial check
+        updateNavbarShadow();
+    }
+
+    // ===== Smooth Scroll for Anchor Links =====
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
@@ -36,30 +87,28 @@
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                
+                const navHeight = navbar ? navbar.offsetHeight : 0;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
 
-    // ===== NAVBAR SHADOW ON SCROLL =====
-    const navbar = document.getElementById('navbar');
-    let lastScrollY = 0;
-
-    if (navbar) {
-        window.addEventListener('scroll', function() {
-            const currentScrollY = window.scrollY;
-            
-            if (currentScrollY > 50) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-            
-            lastScrollY = currentScrollY;
-        }, { passive: true });
+    // ===== Fix for iOS Safari 100vh issue =====
+    function setHeroHeight() {
+        const hero = document.getElementById('hero');
+        if (hero) {
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', vh + 'px');
+        }
     }
+
+    setHeroHeight();
+    window.addEventListener('resize', setHeroHeight, { passive: true });
 
 })();
