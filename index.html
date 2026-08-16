@@ -1,101 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Danson Jr | Junior Developer</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rabindra Khadka — Operations &amp; IT Support</title>
+    <meta name="description" content="Rabindra Khadka — IT Support, Operations &amp; Cloud/DevOps portfolio. ITIL, Zendesk, AWS CloudFormation, Python, Oracle WMS.">
+    <meta property="og:title" content="Rabindra Khadka — Operations &amp; IT Support">
+    <meta property="og:description" content="Operations &amp; IT Support professional building cloud/DevOps skills. ITIL · Zendesk · AWS · Python.">
+    <meta property="og:url" content="https://dansonjr.github.io">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    
+    <!-- ====== FONTS ====== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- ====== STYLES ====== -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/console.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <nav>
-            <h1>👨‍💻 Rabindra Khadka</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Hi, I'm <span class="highlight">Rabindra Khadka</span> 👋</h2>
-            <p class="subtitle">Junior Software Developer | Problem Solver | Lifelong Learner</p>
-            <a href="#projects" class="btn">View My Work</a>
+    <!-- ====== NAVIGATION ====== -->
+    <div class="statusbar" id="navbar">
+        <div class="wrap statusbar-inner">
+            <div class="prompt">rk<span>@</span>ops<span>:~$</span></div>
+            <nav class="navlinks" id="navLinks">
+                <a href="#about"><span class="flag">--</span><span class="label">about</span></a>
+                <a href="#skills"><span class="flag">--</span><span class="label">skills</span></a>
+                <a href="#projects"><span class="flag">--</span><span class="label">projects</span></a>
+                <a href="#experience"><span class="flag">--</span><span class="label">experience</span></a>
+                <a href="#contact"><span class="flag">--</span><span class="label">contact</span></a>
+                <span class="clock" id="clock">SYD --:--</span>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
+    <!-- ====== HERO SECTION ====== -->
+    <div class="wrap">
+        <section class="hero" id="hero">
+            <div>
+                <div class="eyebrow"><span class="dot pulse"></span> SYSTEMS OPERATIONAL — SYDNEY, NSW</div>
+                <h1 class="headline">I keep operations running — <em>on the floor, and in the cloud.</em></h1>
+                <p class="hero-sub">
+                    <b>Rabindra Khadka.</b> IT Support &amp; Operations professional with 3+ years leading frontline
+                    and warehouse teams, now building toward cloud &amp; DevOps — ITIL 4, Zendesk, Oracle WMS, AWS
+                    CloudFormation, and Python.
+                </p>
+                <div class="cta-row">
+                    <a class="btn btn-solid" href="#projects">View projects</a>
+                    <a class="btn btn-outline" href="assets/Rabindra_Khadka_Resume.pdf" download>Download résumé</a>
+                </div>
+            </div>
+
+            <div class="console" aria-hidden="true">
+                <div class="console-head">
+                    <span>ops-log — live</span>
+                    <div class="lights"><i></i><i></i><i></i></div>
+                </div>
+                <div class="console-body" id="consoleBody"></div>
+                <div class="console-foot">
+                    <span>uptime <b>3y 2m</b></span>
+                    <span>queue <b>0 open</b></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ====== ABOUT SECTION ====== -->
     <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I'm a passionate junior developer eager to build meaningful applications.
-            I love turning ideas into reality through code and I'm actively looking
-            for my first full-time developer role!
-        </p>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>📝 Task Manager</h3>
-                <p>A full-stack app using React + Node.js + PostgreSQL</p>
-                <div class="project-links">
-                    <a href="#" class="btn-small">Live Demo</a>
-                    <a href="#" class="btn-small">GitHub</a>
-                </div>
+        <div class="wrap">
+            <div class="section-head">
+                <span class="section-num">01</span>
+                <h2>About</h2>
             </div>
-            <div class="project-card">
-                <h3>🌤 Weather App</h3>
-                <p>Real-time weather data with vanilla JS and OpenWeather API</p>
-                <div class="project-links">
-                    <a href="#" class="btn-small">Live Demo</a>
-                    <a href="#" class="btn-small">GitHub</a>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I lead operations and warehouse teams at <b>The Good Guys, Alexandria</b> — scheduling, inventory,
+                        vendor and procurement management across a $5M+ asset pool, and the customer-facing systems that
+                        keep a busy retail floor running.
+                    </p>
+                    <p>
+                        Alongside that, I hold a <b>Bachelor of Information Technology</b> and I'm building hands-on cloud
+                        and DevOps skills in my own time — AWS infrastructure, Python scripting, and a self-directed
+                        project log. This site is where those two sides meet.
+                    </p>
                 </div>
-            </div>
-            <div class="project-card">
-                <h3>🛒 E-Commerce UI</h3>
-                <p>Responsive frontend clone built with HTML, CSS, and JavaScript</p>
-                <div class="project-links">
-                    <a href="#" class="btn-small">Live Demo</a>
-                    <a href="#" class="btn-small">GitHub</a>
+                <div class="sysinfo">
+                    <div class="sysinfo-row"><span class="k">location</span><span class="v">Sydney, NSW, AU</span></div>
+                    <div class="sysinfo-row"><span class="k">focus</span><span class="v">IT Support · Ops · Cloud</span></div>
+                    <div class="sysinfo-row"><span class="k">education</span><span class="v">B.IT — Federation University</span></div>
+                    <div class="sysinfo-row"><span class="k">certification</span><span class="v">ITIL 4 Foundation</span></div>
+                    <div class="sysinfo-row"><span class="k">in progress</span><span class="v">CompTIA A+ · MS-900 · AWS SAA</span></div>
+                    <div class="sysinfo-row"><span class="k">status</span><span class="v" style="color:var(--teal)">open to opportunities</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- ====== SKILLS SECTION ====== -->
     <section id="skills">
-        <h2>My Skills</h2>
-        <div class="skills-list">
-            <span>JavaScript</span>
-            <span>React</span>
-            <span>Node.js</span>
-            <span>HTML & CSS</span>
-            <span>Python</span>
-            <span>Git</span>
-            <span>REST APIs</span>
-            <span>PostgreSQL</span>
+        <div class="wrap">
+            <div class="section-head">
+                <span class="section-num">02</span>
+                <h2>Skills</h2>
+                <span class="section-tag">3 modules</span>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-mod">
+                    <div class="skill-mod-head">🖥️ SUPPORT &amp; ITSM</div>
+                    <ul>
+                        <li>ITIL 4 Foundation</li>
+                        <li>Zendesk</li>
+                        <li>Windows &amp; Microsoft 365</li>
+                        <li>Citrix-hosted apps</li>
+                        <li>POS &amp; payment systems</li>
+                    </ul>
+                </div>
+                <div class="skill-mod">
+                    <div class="skill-mod-head">☁️ CLOUD &amp; DEVOPS</div>
+                    <ul>
+                        <li>AWS CloudFormation</li>
+                        <li>AWS RDS (PostgreSQL)</li>
+                        <li>Python</li>
+                        <li>Git &amp; GitHub</li>
+                        <li>Azure fundamentals</li>
+                    </ul>
+                </div>
+                <div class="skill-mod">
+                    <div class="skill-mod-head">📊 OPERATIONS &amp; DATA</div>
+                    <ul>
+                        <li>Oracle WMS</li>
+                        <li>Power BI</li>
+                        <li>Advanced Excel</li>
+                        <li>Zebra RF / PDA scanning</li>
+                        <li>Procurement &amp; vendor mgmt</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>📬 Let's Connect</h2>
-        <p>I'm open to new opportunities, collaborations, or just a chat!</p>
-        <div class="social-links">
-            <a href="https://github.com/Dansonjr">GitHub</a>
+    <!-- ====== PROJECTS SECTION ====== -->
+    <section id="projects">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="section-num">03</span>
+                <h2>Projects</h2>
+                <span class="section-tag">github.com/Dansonjr</span>
+            </div>
+            <div class="proj-grid">
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-name">🐾 PetPal</span>
+                        <span class="proj-status">BUILDING</span>
+                    </div>
+                    <p class="proj-desc">A social platform for pet owners — feed, matching, chat and friends, with a full onboarding and login flow.</p>
+                    <div class="proj-stack">React · Node.js · PostgreSQL</div>
+                    <a class="proj-link" href="https://github.com/Dansonjr/PetPal" target="_blank" rel="noopener">→ view repo</a>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-name">☁️ cloudformation-vpc-rds</span>
+                        <span class="proj-status">DEPLOYED</span>
+                    </div>
+                    <p class="proj-desc">A CloudFormation template that provisions a VPC and a PostgreSQL RDS instance as reusable infrastructure-as-code.</p>
+                    <div class="proj-stack">AWS · CloudFormation · IaC</div>
+                    <a class="proj-link" href="https://github.com/Dansonjr/cloudformation-vpc-rds" target="_blank" rel="noopener">→ view repo</a>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-name">🐍 rds-python-connection</span>
+                        <span class="proj-status">DEPLOYED</span>
+                    </div>
+                    <p class="proj-desc">A Python script that connects to and queries an AWS RDS PostgreSQL instance.</p>
+                    <div class="proj-stack">Python · AWS RDS · PostgreSQL</div>
+                    <a class="proj-link" href="https://github.com/Dansonjr/rds-python-connection" target="_blank" rel="noopener">→ view repo</a>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Rabindra Khadka. Built with ❤️ on GitHub Pages.</p>
-    </footer>
+
+    <!-- ====== EXPERIENCE SECTION ====== -->
+    <section id="experience">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="section-num">04</span>
+                <h2>Experience</h2>
+            </div>
+            <div class="log">
+                <div class="log-entry">
+                    <div class="log-meta">Nov 2023 — Present</div>
+                    <div class="log-title">Operations Manager</div>
+                    <div class="log-org">The Good Guys, Alexandria</div>
+                    <ul class="log-bullets">
+                        <li>Directs daily operations, resource allocation and scheduling across the store</li>
+                        <li>Improved processing throughput 40% via Power BI dashboards linked to scheduling</li>
+                        <li>Manages procurement across a $5M+ asset pool, holding inventory variance under $3,000</li>
+                    </ul>
+                </div>
+
+                <div class="log-entry">
+                    <div class="log-meta">Aug 2022 — Nov 2023</div>
+                    <div class="log-title">Warehouse Team Leader</div>
+                    <div class="log-org">The Good Guys, Alexandria</div>
+                    <ul class="log-bullets">
+                        <li>Ran inbound receipt and put-away on Oracle WMS with Zebra RF/PDA scanning</li>
+                        <li>Raised and tracked damage/shortage claims through Solvup and RLO</li>
+                        <li>Moved team logging from manual to digital, lifting record-keeping accuracy 25%</li>
+                    </ul>
+                </div>
+
+                <div class="log-entry">
+                    <div class="log-meta">Jan 2022 — Jul 2022</div>
+                    <div class="log-title">Junior Data Analyst</div>
+                    <div class="log-org">Paxform Pty Ltd, Parramatta</div>
+                    <ul class="log-bullets">
+                        <li>Built Power BI and Excel dashboards turning raw data into schedules for frontline teams</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT SECTION ====== -->
+    <section id="contact">
+        <div class="wrap">
+            <div class="section-head">
+                <span class="section-num">05</span>
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <a class="contact-card" href="mailto:rabin02khadka@gmail.com">
+                    <div class="contact-icon">✉</div>
+                    <div>
+                        <div class="contact-label">EMAIL</div>
+                        <div class="contact-value">rabin02khadka@gmail.com</div>
+                    </div>
+                </a>
+                <a class="contact-card" href="https://linkedin.com/in/rabindra01" target="_blank" rel="noopener">
+                    <div class="contact-icon">in</div>
+                    <div>
+                        <div class="contact-label">LINKEDIN</div>
+                        <div class="contact-value">/in/rabindra01</div>
+                    </div>
+                </a>
+                <a class="contact-card" href="https://github.com/Dansonjr" target="_blank" rel="noopener">
+                    <div class="contact-icon">⌥</div>
+                    <div>
+                        <div class="contact-label">GITHUB</div>
+                        <div class="contact-value">/Dansonjr</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <div class="wrap">
+        <footer>
+            <span>© 2026 Rabindra Khadka</span>
+            <span>built with plain HTML, CSS &amp; JS — hosted on GitHub Pages</span>
+        </footer>
+    </div>
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script src="js/clock.js"></script>
+    <script src="js/console.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>
