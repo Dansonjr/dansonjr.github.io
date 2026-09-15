@@ -16,8 +16,8 @@
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(79, 140, 247, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(123, 97, 255, 0.12) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(232, 163, 61, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(201, 72, 79, 0.12) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -36,14 +36,14 @@
 
 .hero-badge {
     display: inline-block;
-    background: rgba(79, 140, 247, 0.15);
+    background: rgba(232, 163, 61, 0.15);
     color: var(--accent-primary);
     padding: 4px 16px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    border: 1px solid rgba(79, 140, 247, 0.3);
+    border: 1px solid rgba(232, 163, 61, 0.3);
     backdrop-filter: blur(10px);
 }
 
@@ -86,26 +86,26 @@
 }
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(79, 140, 247, 0.4);
+    box-shadow: 0 12px 32px rgba(232, 163, 61, 0.4);
 }
 
 .btn-secondary {
     display: inline-block;
     padding: 12px 32px;
-    background: rgba(79, 140, 247, 0.08);
+    background: rgba(232, 163, 61, 0.08);
     color: var(--text-primary);
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     font-size: 1rem;
-    border: 1px solid rgba(79, 140, 247, 0.3);
+    border: 1px solid rgba(232, 163, 61, 0.3);
     transition: transform var(--transition), border-color var(--transition), background var(--transition);
     backdrop-filter: blur(10px);
 }
 .btn-secondary:hover {
     transform: translateY(-2px);
     border-color: var(--accent-primary);
-    background: rgba(79, 140, 247, 0.15);
+    background: rgba(232, 163, 61, 0.15);
 }
 
 .hero-stats {

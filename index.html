@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+    <!-- Theme (must load before CSS to prevent flash of wrong theme) -->
+    <script src="js/theme.js"></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles/base.css" />
@@ -54,7 +57,7 @@
                 <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
-                <nav class="nav-menu" id="navMenu">
+                                <nav class="nav-menu" id="navMenu">
                     <a href="#home" onclick="router.navigate('home'); return false;">Home</a>
                     <a href="#about" onclick="router.navigate('about'); return false;">About</a>
                     <a href="#skills" onclick="router.navigate('skills'); return false;">Skills</a>
@@ -62,6 +65,7 @@
                     <a href="#experience" onclick="router.navigate('experience'); return false;">Experience</a>
                     <a href="#contact" onclick="router.navigate('contact'); return false;">Contact</a>
                     <a href="assets/Rabindra_Khadka_Resume.pdf" download class="nav-resume">📄 Resume</a>
+                    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
                 </nav>
             </div>
         </header>
