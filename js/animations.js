@@ -1,76 +1,67 @@
 /**
- * Animations Module
- * Handles scroll-triggered fade-up animations
+ * Page Animations & Scroll Effects
  */
 
 (function() {
     'use strict';
 
-    // ===== Add Fade-Up Classes =====
-    function addFadeUpClasses() {
-        const selectors = [
-            'section .about-grid',
-            'section .education-grid',
-            'section .skills-grid',
-            'section .projects-grid',
-            'section .experience-timeline',
-            'section .contact-grid'
-        ];
-
-        const elements = document.querySelectorAll(selectors.join(', '));
-        elements.forEach(function(el) {
-            el.classList.add('fade-up');
-        });
-    }
-
-    // ===== Initialize Intersection Observer =====
-    function initFadeUpObserver() {
-        // Check if IntersectionObserver is supported
-        if (!('IntersectionObserver' in window)) {
-            // Fallback: make all elements visible
-            document.querySelectorAll('.fade-up').forEach(function(el) {
-                el.classList.add('visible');
-            });
-            return;
-        }
-
-        // Check if user prefers reduced motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            document.querySelectorAll('.fade-up').forEach(function(el) {
-                el.classList.add('visible');
-            });
-            return;
-        }
-
-        // Create observer
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+    /**
+     * Setup scroll-based fade-in animations
+     */
+    function setupAnimations() {
+        const elements = document.querySelectorAll('section, .project-card, .exp-item, .edu-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, {
-            threshold: CONFIG.ANIMATION.THRESHOLD || 0.1,
-            rootMargin: CONFIG.ANIMATION.ROOT_MARGIN || '0px 0px -50px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
 
-        // Observe elements
-        document.querySelectorAll('.fade-up').forEach(function(el) {
+        elements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
     }
 
-    // ===== Initialize =====
-    function init() {
-        addFadeUpClasses();
-        initFadeUpObserver();
+    /**
+     * Smooth scroll for anchor links
+     */
+    function setupSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#home' && href !== '#about' && href !== '#projects' && 
+                    href !== '#contact' && href !== '#experience' && href !== '#skills') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
     }
 
-    // Run when DOM is ready
+    // Initialize animations
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => {
+            setupAnimations();
+            setupSmoothScroll();
+        });
     } else {
-        init();
+        setupAnimations();
+        setupSmoothScroll();
     }
+
+    // Export for dynamic page updates
+    window.setupAnimations = setupAnimations;
 
 })();
