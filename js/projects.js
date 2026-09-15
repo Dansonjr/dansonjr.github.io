@@ -188,7 +188,7 @@
         const excluded = CONFIG.EXCLUDED_REPOS;
 
         try {
-            // Fetch repos from GitHub
+            // Fetch repos from GitHub with timeout
             const allRepos = await Promise.race([
                 GitHubAPI.fetchRepos(username),
                 new Promise((_, reject) => 

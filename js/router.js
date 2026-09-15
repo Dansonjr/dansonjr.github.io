@@ -64,6 +64,13 @@
                             window.loadProjects();
                         }
                     }, 100);
+                } else if (pageName === 'home') {
+                    // Load featured projects on home page
+                    setTimeout(() => {
+                        if (window.loadFeaturedProjects) {
+                            window.loadFeaturedProjects();
+                        }
+                    }, 100);
                 }
 
                 // Trigger animations
