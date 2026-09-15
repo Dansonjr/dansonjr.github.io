@@ -10,7 +10,7 @@
     background: rgba(10, 10, 10, 0.92);
     backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transition: box-shadow var(--transition), border-color var(--transition);
+    transition: box-shadow var(--transition), border-color var(--transition), background var(--transition);
 }
 
 .navbar.scrolled {
@@ -22,23 +22,41 @@
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px;
-    height: 68px;
+    height: 80px; /* increased to give more header space */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* logo: avatar + name */
 .nav-logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.02em;
+    color: var(--text-primary);
 }
 
+.nav-avatar {
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, var(--burgundy-700), var(--burgundy-600));
+}
+
+.nav-name {
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+/* existing nav-menu rules remain; no functional change needed */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -65,16 +83,14 @@
     transition: width var(--transition);
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover, .nav-menu a.active {
     color: var(--text-primary);
 }
-.nav-menu a:hover::after {
+.nav-menu a:hover::after, .nav-menu a.active::after {
     width: 100%;
 }
 
-/* ========================================
-   MOBILE NAV TOGGLE
-   ======================================== */
+/* MOBILE NAV TOGGLE (unchanged) */
 .nav-toggle {
     display: none;
     flex-direction: column;
