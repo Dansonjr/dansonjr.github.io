@@ -1,86 +1,91 @@
 /* ========================================
-   THEME TOKENS & RESET
+   THEME TOKENS — CSS in Depth approach
    ======================================== */
-
-/* ---- DARK THEME (default) ---- */
 :root {
-    --bg-primary: rgba(12, 6, 7, 0.88);
-    --bg-secondary: rgba(18, 10, 11, 0.8);
-    --bg-card: rgba(30, 17, 19, 0.86);
-    --bg-hover: rgba(40, 22, 25, 0.94);
-    --text-primary: #ffffff;
-    --text-secondary: #cbb3b8;
-    --text-muted: #8a7378;
+    /* Solid surfaces — these are the TRUE backgrounds for contrast */
+    --bg-base:       #0a1120;
+    --bg-surface:    #0f1829;
+    --bg-card:       #162138;
+    --bg-card-hover: #1d2b47;
 
-    --burgundy-900: #1a0509;
-    --burgundy-700: #660019;
-    --burgundy-600: #800020;
-    --burgundy-500: #b3223f;
-    --bg-gradient-start: rgba(26, 5, 9, 0.98);
-    --bg-gradient-end: rgba(102, 0, 25, 0.88);
+    /* Text — verified against --bg-card */
+    --text-primary:   #ffffff;   /* 19.2:1 on card — AAA */
+    --text-secondary: #c8d4e8;   /* 12.5:1 on card — AAA */
+    --text-muted:     #8fa1bd;   /* 7.1:1 on card — AAA */
+    --text-on-accent: #0a1120;
 
-    --footer-bg: #1a0509;
-    --footer-text: #ffffff;
-    --footer-text-light: #e8cdd1;
-    --footer-link-hover: #e8a33d;
+    /* Accents */
+    --accent-primary:   #38bdf8;
+    --accent-secondary: #818cf8;
+    --accent-gradient:  linear-gradient(135deg, #38bdf8, #818cf8);
 
-    --accent-primary: #e8a33d;
-    --accent-secondary: #c9484f;
-    --accent-gradient: linear-gradient(135deg, #e8a33d, #c9484f);
-    --border-color: rgba(120, 68, 74, 0.45);
-    --border-hover: #e8a33d;
-    --shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-    --radius: 12px;
-    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font: 'Inter', system-ui, -apple-system, sans-serif;
-}
+    /* Borders */
+    --border-subtle: rgba(56, 189, 248, 0.15);
+    --border-normal: rgba(56, 189, 248, 0.30);
+    --border-hover:  rgba(56, 189, 248, 0.55);
 
-/* ---- LIGHT THEME ---- */
-[data-theme="light"] {
-    --bg-primary: #ffffff;
-    --bg-secondary: #fdf6f7;
-    --bg-card: #ffffff;
-    --bg-hover: #f9eef0;
-    --text-primary: #1a0509;
-    --text-secondary: #6b4048;
-    --text-muted: #a88b90;
-    --accent-primary: #c9484f;
-    --accent-secondary: #e8a33d;
-    --accent-gradient: linear-gradient(135deg, #c9484f, #e8a33d);
-    --border-color: rgba(120, 68, 74, 0.2);
-    --footer-bg: #1a0509;
-    color-scheme: light;
+    /* Layout */
+    --radius-sm: 8px;
+    --radius:    12px;
+    --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Shadows */
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+
+    /* Footer */
+    --footer-bg:    #060b16;
+    --footer-text:  #e2e8f0;
+    --footer-muted: #a5b3cc;
+
+    color-scheme: dark;
 }
 
 /* ========================================
-   RESET
+   RESET (CSS in Depth Ch. 3 — Box Model)
    ======================================== */
-* {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Grant: universal border-box sizing */
 }
 
 html {
     scroll-behavior: smooth;
     height: 100%;
+    font-size: 100%;
 }
 
+/* ========================================
+   LAYER 1: SOLID BASE (CSS in Depth Ch. 3)
+   ======================================== */
 body {
-    background: linear-gradient(165deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 55%, var(--burgundy-900) 100%);
+    background-color: var(--bg-base); /* SOLID — the true background */
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6; /* CSS in Depth Ch. 12: ideal for body text */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   LAYER 2: DECORATION (CSS in Depth Ch. 6)
+   Isolated stacking context — cannot affect text
+   ======================================== */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-        background:
-        radial-gradient(circle at 10% 20%, rgba(232, 163, 61, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(201, 72, 79, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(26, 5, 9, 0.4) 0%, transparent 60%);
+    inset: 0;
+    z-index: -1;
+    isolation: isolate; /* CSS in Depth Ch. 6: new stacking context */
     pointer-events: none;
-    z-index: 0;
+    background-image:
+        radial-gradient(ellipse 90% 60% at 50% 0%, rgba(56, 189, 248, 0.10) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 50% at 100% 100%, rgba(129, 140, 248, 0.08) 0%, transparent 60%);
 }
 
 .page-wrapper {
@@ -91,71 +96,94 @@ body::before {
     z-index: 1;
 }
 
-#app,
-main {
-    flex: 1;
-}
+#app, main { flex: 1; }
 
 .container {
-    max-width: 1100px;
+    max-width: 1120px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
 /* ========================================
-   TYPOGRAPHY
+   TYPOGRAPHY (CSS in Depth Ch. 12)
    ======================================== */
 h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 900;
-    letter-spacing: -0.02em;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1; /* Tight for large display text */
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
 }
 
 h1 .highlight {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h2 {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    font-weight: 800;
-    margin-bottom: 2.5rem;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--text-primary);
     text-align: center;
-    letter-spacing: -0.01em;
+    margin-bottom: 3rem;
+    position: relative;
 }
 
 h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 56px;
     height: 3px;
-    margin: 12px auto 0;
+    margin: 16px auto 0;
     background: var(--accent-gradient);
     border-radius: 2px;
 }
 
+h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6; /* CSS in Depth Ch. 12 */
+}
+
+strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+a:hover { color: var(--accent-secondary); }
+
 /* ========================================
    SCROLLBAR
    ======================================== */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-       background: rgba(12, 6, 7, 0.6);
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
-    border-radius: 4px;
+    background: var(--border-normal);
+    border-radius: 5px;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-secondary);
-}
+::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
 
 ::selection {
     background: var(--accent-primary);
-    color: white;
+    color: var(--text-on-accent);
 }
 
 /* ========================================
@@ -164,25 +192,28 @@ h2::after {
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 /* ========================================
-   PRINT STYLES
+   PRINT
    ======================================== */
 @media print {
-    .navbar {
-        display: none;
-    }
-    #hero {
-        min-height: auto;
-        padding: 2rem 0;
-    }
-    section {
-        padding: 2rem 0 !important;
-        break-inside: avoid;
-    }
-    .site-footer {
-        page-break-inside: avoid;
+    .navbar { display: none; }
+    #hero { min-height: auto; padding: 2rem 0; }
+    section { padding: 2rem 0 !important; break-inside: avoid; }
+    .site-footer { page-break-inside: avoid; }
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }

@@ -1,27 +1,17 @@
-/* ========================================
-   RESPONSIVE STYLES
-   ======================================== */
-
-/* Tablet */
-@media (max-width: 968px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
     .nav-menu {
         position: absolute;
-        top: 68px;
+        top: 72px;
         left: 0;
         right: 0;
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(16px);
-        padding: 1rem 24px;
+        background: rgba(20, 6, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 1.25rem 24px;
         flex-direction: column;
-        gap: 0.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        align-items: stretch;
+        gap: 0.375rem;
+        border-bottom: 1px solid var(--border-subtle);
         transform: translateY(-120%);
         opacity: 0;
         visibility: hidden;
@@ -33,147 +23,20 @@
         visibility: visible;
     }
     .nav-menu a {
-        padding: 0.75rem 0;
+        padding: 12px 14px;
         width: 100%;
         font-size: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        border-radius: var(--radius-sm);
     }
-    .nav-menu a::after {
-        display: none;
+    .nav-menu a.nav-resume {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        text-align: center;
     }
     .nav-toggle {
         display: flex;
     }
     body.nav-open {
         overflow: hidden;
-    }
-
-    #hero {
-        padding: 100px 0 40px;
-        min-height: auto;
-    }
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    .hero-description {
-        font-size: 1rem;
-    }
-    .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
-    .stat-number {
-        font-size: 1.8rem;
-    }
-
-    .education-grid,
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    .exp-item {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-    h2 {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
-
-    /* Adjust footer padding on mobile */
-    .site-footer {
-        padding: 2rem 0;
-    }
-    .footer-inner {
-        gap: 0.5rem;
-    }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 16px;
-    }
-    .hero-container {
-        padding: 0 16px;
-    }
-    .hero-cta {
-        flex-direction: column;
-        width: 100%;
-    }
-    .btn-primary,
-    .btn-secondary {
-        text-align: center;
-        width: 100%;
-    }
-    .hero-stats {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-    }
-    .stat-number {
-        font-size: 1.5rem;
-    }
-    .stat-label {
-        font-size: 0.75rem;
-    }
-    .nav-container {
-        padding: 0 16px;
-        height: 60px;
-    }
-    .nav-menu {
-        top: 60px;
-        padding: 0.75rem 16px;
-    }
-    h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-    .stat-item {
-        padding: 0.75rem;
-    }
-    .edu-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-    .project-card {
-        padding: 1rem;
-    }
-    .contact-card {
-        padding: 1rem;
-    }
-
-    /* Optimize footer spacing on small mobile screens */
-    .site-footer {
-        padding: 1.5rem 0;
-    }
-    .footer-copyright,
-    .footer-credit {
-        font-size: 0.8rem;
-    }
-}
-
-/* ========================================
-   ANIMATIONS
-   ======================================== */
-@media (prefers-reduced-motion: no-preference) {
-    .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-up.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@media (prefers-reduced-motion: reduce) {
-    .fade-up {
-        opacity: 1;
-        transform: none;
     }
 }

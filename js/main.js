@@ -56,7 +56,7 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
                 navbar.style.boxShadow = 'var(--shadow)';
-                navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+                navbar.style.backgroundColor = 'rgba(12, 6, 7, 0.95)';
             } else {
                 navbar.style.boxShadow = 'none';
                 navbar.style.backgroundColor = 'transparent';
