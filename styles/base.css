@@ -40,6 +40,40 @@
 
     color-scheme: dark;
 }
+/* ========================================
+   LIGHT THEME
+   ======================================== */
+[data-theme="light"] {
+    /* Surfaces */
+    --bg-base:       #f8fafc;
+    --bg-surface:    #ffffff;
+    --bg-card:       #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --bg-nav:        rgba(255, 255, 255, 0.92);
+
+    /* Text */
+    --text-primary:   #0a1120;
+    --text-secondary: #334155;
+    --text-muted:     #64748b;
+    --text-on-accent: #ffffff;
+
+    /* Accents — slightly darker for light-bg contrast */
+    --accent-primary:   #0284c7;
+    --accent-secondary: #6366f1;
+    --accent-gradient:  linear-gradient(135deg, #0284c7, #6366f1);
+
+    /* Borders */
+    --border-subtle: rgba(10, 17, 32, 0.08);
+    --border-normal: rgba(10, 17, 32, 0.15);
+    --border-hover:  rgba(2, 132, 199, 0.4);
+
+    /* Footer */
+    --footer-bg:    #0a1120;
+    --footer-text:  #e2e8f0;
+    --footer-muted: #94a3b8;
+
+    color-scheme: light;
+}
 
 /* ========================================
    RESET (CSS in Depth Ch. 3 — Box Model)
