@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rabindra Khadka · Software Engineer & IT Professional</title>
-    <meta name="description" content="Rabindra Khadka — Software Engineer & IT Professional. B.IT graduate, Python, AWS, React, ITIL certified. Building reliable systems and cloud infrastructure." />
+    <meta name="description" content="Rabindra Khadka — Software Engineer & IT Professional. B.IT graduate, Python, AWS, React, ITIL certified. Building reliable systems and cloud infrastructure.[...]" />
     <meta property="og:title" content="Rabindra Khadka · Software Engineer & IT Professional" />
     <meta property="og:description" content="Software Engineer & IT Professional. B.IT graduate with Python, AWS, React, and cloud infrastructure skills." />
     <meta property="og:url" content="https://dansonjr.github.io" />
@@ -29,8 +29,12 @@
     <!-- ===== NAVIGATION ===== -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo" onclick="router.navigate('home'); return false;">👨‍💻 RK</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+            <!-- Replaced text logo with profile image + name; fallback to AnimeMe.png if profile-photo.png is missing -->
+            <a href="#home" class="nav-logo" onclick="router.navigate('home'); return false;" aria-label="Go to home">
+                <img class="nav-avatar" src="assets/profile-photo.png" alt="RK" onerror="this.onerror=null;this.src='AnimeMe.png'">
+                <span class="nav-name">Rabindra Khadka</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
