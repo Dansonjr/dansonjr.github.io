@@ -1,63 +1,66 @@
 /**
- * Main Entry Point
- * Initializes all modules and handles page load
+ * Main Application Initialization
  */
 
 (function() {
     'use strict';
 
-    // ===== Console Identity =====
-    function showConsoleIdentity() {
-        console.log('🚀 Portfolio initialized');
-        console.log('📡 Live at: https://dansonjr.github.io');
-        console.log('👨‍💻 Built for Software Engineering & IT Roles');
-        console.log('🎯 Focus: Python, AWS, React, Cloud Infrastructure');
-        console.log('📦 Powered by the GitHub API');
+    // Initialize the app when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initApp);
+    } else {
+        initApp();
     }
 
-    // ===== Check for Font Loading =====
-    function handleFontLoading() {
-        if ('fonts' in document) {
-            document.fonts.ready.then(function() {
-                document.body.classList.add('fonts-loaded');
+    function initApp() {
+        // Setup navigation toggle
+        setupNavToggle();
+        
+        // Setup navbar scroll behavior
+        setupNavbarScroll();
+    }
+
+    /**
+     * Setup mobile navigation toggle
+     */
+    function setupNavToggle() {
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        // Close menu when a link is clicked
+        if (navMenu) {
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
             });
         }
     }
 
-    // ===== External Link Handler =====
-    function handleExternalLinks() {
-        document.querySelectorAll('a[target="_blank"]').forEach(function(link) {
-            link.setAttribute('rel', 'noopener noreferrer');
+    /**
+     * Setup navbar scroll behavior (shadow on scroll)
+     */
+    function setupNavbarScroll() {
+        const navbar = document.getElementById('navbar');
+        if (!navbar) return;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                navbar.style.boxShadow = 'var(--shadow)';
+                navbar.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                navbar.style.boxShadow = 'none';
+                navbar.style.backgroundColor = 'transparent';
+            }
         });
     }
-
-    // ===== Service Worker Registration (Optional) =====
-    function registerServiceWorker() {
-        // Uncomment to enable service worker for offline support
-        // if ('serviceWorker' in navigator) {
-        //     navigator.serviceWorker.register('/sw.js')
-        //         .then(function(registration) {
-        //             console.log('Service Worker registered successfully');
-        //         })
-        //         .catch(function(error) {
-        //             console.log('Service Worker registration failed:', error);
-        //         });
-        // }
-    }
-
-    // ===== Initialize =====
-    function init() {
-        showConsoleIdentity();
-        handleFontLoading();
-        handleExternalLinks();
-        // registerServiceWorker(); // Uncomment to enable
-    }
-
-    // Run when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-
 })();

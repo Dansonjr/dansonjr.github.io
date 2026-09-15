@@ -29,310 +29,28 @@
     <!-- ===== NAVIGATION ===== -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">👨‍💻 RK</a>
+            <a href="#home" class="nav-logo" onclick="router.navigate('home'); return false;">👨‍💻 RK</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
                 <span></span><span></span><span></span>
             </button>
             <nav class="nav-menu" id="navMenu">
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" onclick="router.navigate('home'); return false;">Home</a>
+                <a href="#about" onclick="router.navigate('about'); return false;">About</a>
+                <a href="#skills" onclick="router.navigate('skills'); return false;">Skills</a>
+                <a href="#projects" onclick="router.navigate('projects'); return false;">Projects</a>
+                <a href="#experience" onclick="router.navigate('experience'); return false;">Experience</a>
+                <a href="#contact" onclick="router.navigate('contact'); return false;">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section id="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">🟢 Open to Software Engineering &amp; IT Roles</div>
-                <h1>Rabindra <span class="highlight">Khadka</span></h1>
-                <p class="hero-subtitle">Software Engineer · IT Professional · Cloud Enthusiast</p>
-                <p class="hero-description">
-                    <strong>B.IT Graduate</strong> from Federation University with hands-on experience in
-                    <strong>software development, cloud infrastructure, and IT operations</strong>.
-                    Building reliable, scalable systems with Python, JavaScript, AWS, and modern DevOps practices.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn-primary">View My Projects</a>
-                    <a href="#contact" class="btn-secondary">Let's Connect</a>
-                </div>
-            </div>
-            <div class="hero-stats" id="heroStats">
-                <div class="stat-card">
-                    <span class="stat-number" id="statProjects">--</span>
-                    <span class="stat-label">Total Projects</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" id="statRepos">--</span>
-                    <span class="stat-label">GitHub Repos</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" id="statStars">--</span>
-                    <span class="stat-label">Total Stars</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I'm a <strong>Bachelor of Information Technology</strong> graduate from
-                        <strong>Federation University</strong> passionate about <strong>software engineering,
-                        cloud infrastructure, and IT operations</strong>. I build systems that people rely on —
-                        from REST APIs and web applications to cloud deployments and IT service management.
-                    </p>
-                    <p>
-                        My technical toolkit includes <strong>Python, JavaScript, React, Node.js, AWS,
-                        CloudFormation, Docker, and Git</strong>. I'm <strong>ITIL 4 certified</strong>
-                        and continuously expanding my knowledge in <strong>DevOps, system architecture,
-                        and cloud-native development</strong>.
-                    </p>
-                    <p>
-                        I'm actively seeking <strong>Software Engineering</strong> and <strong>IT Support
-                        roles</strong> where I can apply my technical skills, problem-solving mindset,
-                        and passion for building reliable, user-focused systems.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-icon">🎓</span>
-                        <div>
-                            <strong>B.IT Graduate</strong>
-                            <span>Federation University</span>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">🛠️</span>
-                        <div>
-                            <strong>ITIL 4 Certified</strong>
-                            <span>IT Service Management</span>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">☁️</span>
-                        <div>
-                            <strong>AWS Cloud Practitioner</strong>
-                            <span>Cloud Fundamentals</span>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-icon">🐍</span>
-                        <div>
-                            <strong>Python Developer</strong>
-                            <span>Backend &amp; Automation</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== EDUCATION ===== -->
-    <section id="education">
-        <div class="container">
-            <h2>Education &amp; Certifications</h2>
-            <div class="education-grid">
-                <div class="edu-card">
-                    <div class="edu-icon">🎓</div>
-                    <div class="edu-content">
-                        <h3>Bachelor of Information Technology</h3>
-                        <p class="edu-org">Federation University, Australia</p>
-                        <p class="edu-desc">
-                            Comprehensive IT degree with focus on software development, database systems,
-                            networking, cloud computing, and system architecture.
-                        </p>
-                        <div class="edu-keywords">
-                            <span>Python</span><span>JavaScript</span><span>SQL</span>
-                            <span>AWS</span><span>Data Structures</span><span>Algorithms</span>
-                            <span>Networking</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-icon">📜</div>
-                    <div class="edu-content">
-                        <h3>ITIL 4 Foundation</h3>
-                        <p class="edu-org">AXELOS — Certified</p>
-                        <p class="edu-desc">
-                            Service management certification covering IT service delivery, incident management,
-                            change management, and continuous improvement.
-                        </p>
-                        <div class="edu-keywords">
-                            <span>ITIL</span><span>Service Desk</span>
-                            <span>Incident Management</span><span>Change Management</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="edu-card">
-                    <div class="edu-icon">📚</div>
-                    <div class="edu-content">
-                        <h3>In Progress: Cloud &amp; DevOps</h3>
-                        <p class="edu-org">Professional Development</p>
-                        <p class="edu-desc">
-                            Actively pursuing certifications and skills in cloud architecture,
-                            DevOps practices, and system administration.
-                        </p>
-                        <div class="edu-keywords">
-                            <span>AWS SAA</span><span>CompTIA A+</span>
-                            <span>MS-900</span><span>Docker</span><span>Kubernetes</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SKILLS ===== -->
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>💻 Software Development</h3>
-                    <ul>
-                        <li>Python</li><li>JavaScript (ES6+)</li><li>React.js</li>
-                        <li>Node.js</li><li>HTML5 &amp; CSS3</li><li>RESTful APIs</li>
-                        <li>Flask &amp; Django</li><li>PostgreSQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>☁️ Cloud &amp; DevOps</h3>
-                    <ul>
-                        <li>AWS (EC2, RDS, S3, VPC)</li><li>AWS CloudFormation</li>
-                        <li>Docker</li><li>Git &amp; GitHub</li>
-                        <li>CI/CD Pipelines</li><li>Linux Administration</li>
-                        <li>Infrastructure as Code</li><li>Cloud Security</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>🛠️ IT &amp; Systems</h3>
-                    <ul>
-                        <li>ITIL 4 Framework</li><li>Zendesk</li><li>Microsoft 365</li>
-                        <li>Active Directory</li><li>Windows Server</li><li>Network Configuration</li>
-                        <li>System Monitoring</li><li>Incident Management</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>📊 Data &amp; Analytics</h3>
-                    <ul>
-                        <li>Power BI</li><li>SQL</li><li>Excel</li>
-                        <li>Data Visualization</li><li>Reporting</li><li>Business Intelligence</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PROJECTS (DYNAMIC) ===== -->
-    <section id="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <p class="section-subtitle">Automatically pulled from my GitHub — always up to date.</p>
-            <div class="projects-grid" id="projectsGrid">
-                <div style="text-align: center; padding: 3rem; color: var(--text-secondary); grid-column: 1 / -1;">
-                    Loading projects from GitHub...
-                </div>
-            </div>
-            <div class="projects-cta">
-                <a href="https://github.com/Dansonjr" target="_blank" class="btn-primary">View All Projects on GitHub →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== EXPERIENCE ===== -->
-    <section id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="exp-item">
-                    <div class="exp-date">2023 — Present</div>
-                    <div class="exp-content">
-                        <h3>IT Support Specialist</h3>
-                        <p class="exp-org">Freelance &amp; Contract</p>
-                        <ul>
-                            <li>Providing IT support services including system troubleshooting, network configuration, and software deployment</li>
-                            <li>Managed incident resolution using ITIL framework, reducing response time by 30%</li>
-                            <li>Configured and maintained Windows Server, Active Directory, and M365 environments</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-date">2022 — 2023</div>
-                    <div class="exp-content">
-                        <h3>Junior Software Developer</h3>
-                        <p class="exp-org">Personal Projects &amp; Open Source</p>
-                        <ul>
-                            <li>Built full-stack web applications using Python, JavaScript, React, and Node.js</li>
-                            <li>Deployed cloud infrastructure on AWS using CloudFormation and managed RDS databases</li>
-                            <li>Developed automation scripts for database management and system monitoring</li>
-                            <li>Contributing to open-source projects and maintaining active GitHub portfolio</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="exp-item">
-                    <div class="exp-date">2021 — 2022</div>
-                    <div class="exp-content">
-                        <h3>IT Support &amp; Data Analyst</h3>
-                        <p class="exp-org">Paxform Pty Ltd</p>
-                        <ul>
-                            <li>Provided IT support for 50+ users including hardware, software, and network troubleshooting</li>
-                            <li>Built Power BI dashboards for operational reporting and data visualization</li>
-                            <li>Automated Excel workflows, reducing manual reporting time by 5+ hours per week</li>
-                            <li>Supported data migration and system integration projects</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact">
-        <div class="container">
-            <h2>Let's Connect</h2>
-            <p class="contact-desc">
-                I'm actively seeking <strong>Software Engineering</strong> and <strong>IT Support</strong> roles.
-                Let's chat about how I can contribute to your team!
-            </p>
-            <div class="contact-grid">
-                <a href="mailto:rabin02khadka@gmail.com" class="contact-card">
-                    <span class="contact-icon">✉️</span>
-                    <div>
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">rabin02khadka@gmail.com</span>
-                    </div>
-                </a>
-                <a href="https://linkedin.com/in/rabindra01" target="_blank" class="contact-card">
-                    <span class="contact-icon">💼</span>
-                    <div>
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">/in/rabindra01</span>
-                    </div>
-                </a>
-                <a href="https://github.com/Dansonjr" target="_blank" class="contact-card">
-                    <span class="contact-icon">🐙</span>
-                    <div>
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">/Dansonjr</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- ===== PAGE CONTAINER ===== -->
+    <main id="app"></main>
 
     <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <p>© 2026 Rabindra Khadka · Software Engineer &amp; IT Professional</p>
+            <p>© 2026 Rabindra Khadka · Software Engineer & IT Professional</p>
             <p class="footer-tech">Built with ❤️ on GitHub Pages — Powered by the GitHub API</p>
         </div>
     </footer>
@@ -340,7 +58,7 @@
     <!-- ===== JAVASCRIPT ===== -->
     <script src="js/config.js"></script>
     <script src="js/github-api.js"></script>
-    <script src="js/projects.js"></script>
+    <script src="js/router.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
