@@ -83,6 +83,14 @@
         font-size: 1.8rem;
         margin-bottom: 2rem;
     }
+
+    /* Adjust footer padding on mobile */
+    .site-footer {
+        padding: 2rem 0;
+    }
+    .footer-inner {
+        gap: 0.5rem;
+    }
 }
 
 /* Small Mobile */
@@ -137,6 +145,15 @@
     }
     .contact-card {
         padding: 1rem;
+    }
+
+    /* Optimize footer spacing on small mobile screens */
+    .site-footer {
+        padding: 1.5rem 0;
+    }
+    .footer-copyright,
+    .footer-credit {
+        font-size: 0.8rem;
     }
 }
 
