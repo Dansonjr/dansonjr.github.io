@@ -3,16 +3,18 @@
    ======================================== */
 section {
     padding: 5rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 #about {
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.4) 0%, rgba(26, 26, 26, 0.3) 100%);
 }
 #skills {
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.3) 0%, rgba(26, 26, 26, 0.2) 100%);
 }
 #experience {
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.35) 0%, rgba(26, 26, 26, 0.25) 100%);
 }
 
 /* ========================================
@@ -47,14 +49,16 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background: var(--bg-card);
+    background: rgba(26, 26, 26, 0.5);
     border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    transition: border-color var(--transition), transform var(--transition);
+    border: 1px solid rgba(42, 42, 42, 0.6);
+    transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    backdrop-filter: blur(10px);
 }
 .stat-item:hover {
-    border-color: var(--border-hover);
+    border-color: rgba(79, 140, 247, 0.4);
     transform: translateX(4px);
+    background: rgba(26, 26, 26, 0.7);
 }
 .stat-icon {
     font-size: 1.8rem;
@@ -83,14 +87,16 @@ section {
     display: flex;
     gap: 1.2rem;
     padding: 1.5rem;
-    background: var(--bg-card);
+    background: rgba(26, 26, 26, 0.5);
     border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    transition: border-color var(--transition), transform var(--transition);
+    border: 1px solid rgba(42, 42, 42, 0.6);
+    transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    backdrop-filter: blur(10px);
 }
 .edu-card:hover {
-    border-color: var(--border-hover);
+    border-color: rgba(79, 140, 247, 0.4);
     transform: translateY(-4px);
+    background: rgba(26, 26, 26, 0.7);
 }
 .edu-icon {
     font-size: 2rem;
@@ -117,7 +123,7 @@ section {
     gap: 0.4rem;
 }
 .edu-keywords span {
-    background: rgba(79, 140, 247, 0.1);
+    background: rgba(79, 140, 247, 0.15);
     color: var(--accent-primary);
     padding: 2px 12px;
     border-radius: 12px;
@@ -135,15 +141,17 @@ section {
 }
 
 .skill-category {
-    background: var(--bg-card);
+    background: rgba(26, 26, 26, 0.5);
     padding: 1.5rem;
     border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    transition: border-color var(--transition), transform var(--transition);
+    border: 1px solid rgba(42, 42, 42, 0.6);
+    transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    backdrop-filter: blur(10px);
 }
 .skill-category:hover {
-    border-color: var(--border-hover);
+    border-color: rgba(79, 140, 247, 0.4);
     transform: translateY(-4px);
+    background: rgba(26, 26, 26, 0.7);
 }
 .skill-category h3 {
     font-size: 1rem;
@@ -157,17 +165,18 @@ section {
     gap: 0.5rem;
 }
 .skill-category li {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.05);
     padding: 4px 14px;
     border-radius: 16px;
     font-size: 0.85rem;
     color: var(--text-secondary);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(42, 42, 42, 0.6);
     transition: all var(--transition);
+    backdrop-filter: blur(10px);
 }
 .skill-category li:hover {
-    background: rgba(79, 140, 247, 0.1);
-    border-color: var(--accent-primary);
+    background: rgba(79, 140, 247, 0.15);
+    border-color: rgba(79, 140, 247, 0.4);
     color: var(--text-primary);
 }
 
@@ -184,7 +193,7 @@ section {
     grid-template-columns: 140px 1fr;
     gap: 2rem;
     padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(42, 42, 42, 0.5);
     transition: padding var(--transition);
 }
 .exp-item:last-child {
@@ -228,6 +237,7 @@ section {
    ======================================== */
 #contact {
     padding: 5rem 0;
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.3) 0%, rgba(26, 26, 26, 0.2) 100%);
 }
 
 .contact-desc {
@@ -252,16 +262,18 @@ section {
     align-items: center;
     gap: 1rem;
     padding: 1.2rem 1.5rem;
-    background: var(--bg-card);
+    background: rgba(26, 26, 26, 0.5);
     border-radius: var(--radius);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(42, 42, 42, 0.6);
     text-decoration: none;
     color: inherit;
-    transition: border-color var(--transition), transform var(--transition);
+    transition: border-color var(--transition), transform var(--transition), background var(--transition);
+    backdrop-filter: blur(10px);
 }
 .contact-card:hover {
-    border-color: var(--border-hover);
+    border-color: rgba(79, 140, 247, 0.4);
     transform: translateY(-4px);
+    background: rgba(26, 26, 26, 0.7);
 }
 .contact-icon {
     font-size: 1.5rem;
@@ -283,10 +295,11 @@ section {
    FOOTER
    ======================================== */
 footer {
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    background: rgba(17, 17, 17, 0.6);
+    border-top: 1px solid rgba(42, 42, 42, 0.5);
     padding: 3rem 0; /* increased padding */
     text-align: center;
+    backdrop-filter: blur(20px);
 }
 footer p {
     color: var(--text-secondary);

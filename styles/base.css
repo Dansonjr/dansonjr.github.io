@@ -2,10 +2,10 @@
    CSS VARIABLES & RESET
    ======================================== */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-card: #1a1a1a;
-    --bg-hover: #222222;
+    --bg-primary: rgba(10, 10, 10, 0.7);
+    --bg-secondary: rgba(17, 17, 17, 0.5);
+    --bg-card: rgba(26, 26, 26, 0.6);
+    --bg-hover: rgba(34, 34, 34, 0.7);
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-muted: #666666;
@@ -15,15 +15,15 @@
     --burgundy-700: #660019;
     --burgundy-600: #800020;
     --burgundy-500: #9a1e36;
-    --bg-gradient-start: #2b0710;
-    --bg-gradient-end:   #6a0e1f;
+    --bg-gradient-start: rgba(43, 7, 16, 0.5);
+    --bg-gradient-end: rgba(106, 14, 31, 0.5);
 
     --accent-primary: #4F8CF7;
     --accent-secondary: #7B61FF;
     --accent-gradient: linear-gradient(135deg, #4F8CF7, #7B61FF);
-    --border-color: #2a2a2a;
+    --border-color: rgba(42, 42, 42, 0.6);
     --border-hover: #4F8CF7;
-    --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     --radius: 12px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --font: 'Inter', system-ui, -apple-system, sans-serif;
@@ -40,12 +40,27 @@ html {
 }
 
 body {
-    /* replace solid dark with a burgundy gradient background */
-    background: linear-gradient(165deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 60%);
+    background: linear-gradient(165deg, rgba(43, 7, 16, 0.6) 0%, rgba(106, 14, 31, 0.4) 60%);
     color: var(--text-primary);
     font-family: var(--font);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(79, 140, 247, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(123, 97, 255, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(42, 7, 16, 0.3) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .container {
@@ -95,7 +110,7 @@ h2::after {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background: var(--bg-primary);
+    background: rgba(10, 10, 10, 0.5);
 }
 ::-webkit-scrollbar-thumb {
     background: var(--accent-primary);
