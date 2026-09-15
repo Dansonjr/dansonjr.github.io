@@ -9,6 +9,15 @@
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-muted: #666666;
+
+    /* Burgundy palette (added) */
+    --burgundy-900: #2b0710;
+    --burgundy-700: #660019;
+    --burgundy-600: #800020;
+    --burgundy-500: #9a1e36;
+    --bg-gradient-start: #2b0710;
+    --bg-gradient-end:   #6a0e1f;
+
     --accent-primary: #4F8CF7;
     --accent-secondary: #7B61FF;
     --accent-gradient: linear-gradient(135deg, #4F8CF7, #7B61FF);
@@ -31,7 +40,8 @@ html {
 }
 
 body {
-    background: var(--bg-primary);
+    /* replace solid dark with a burgundy gradient background */
+    background: linear-gradient(165deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 60%);
     color: var(--text-primary);
     font-family: var(--font);
     line-height: 1.7;
