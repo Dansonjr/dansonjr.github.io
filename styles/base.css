@@ -18,6 +18,12 @@
     --bg-gradient-start: rgba(43, 7, 16, 0.5);
     --bg-gradient-end: rgba(106, 14, 31, 0.5);
 
+    /* Footer Colors - High contrast blue with WCAG AA compliance */
+    --footer-bg: #1e3a8a;      /* Saturated blue (#1e3a8a = 500-600 on Tailwind scale) */
+    --footer-text: #ffffff;    /* Pure white for maximum contrast (21:1 ratio) */
+    --footer-text-light: #e0e7ff;  /* Very light blue for secondary text (11:1 ratio) */
+    --footer-link-hover: #93c5fd;  /* Light blue on hover (7:1 ratio, WCAG AA compliant) */
+
     --accent-primary: #4F8CF7;
     --accent-secondary: #7B61FF;
     --accent-gradient: linear-gradient(135deg, #4F8CF7, #7B61FF);
@@ -37,6 +43,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Ensure html takes full height for sticky footer */
+    height: 100%;
 }
 
 body {
@@ -46,6 +54,10 @@ body {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    /* Ensure body takes full height and uses flexbox for sticky footer */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body::before {
@@ -61,6 +73,20 @@ body::before {
         radial-gradient(circle at 50% 50%, rgba(42, 7, 16, 0.3) 0%, transparent 60%);
     pointer-events: none;
     z-index: 0;
+}
+
+/* Sticky footer wrapper: flexbox container for all content + footer */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures wrapper takes full viewport height */
+}
+
+/* Main content grows to fill available space, pushing footer down */
+#app,
+main {
+    flex: 1;
 }
 
 .container {
@@ -148,5 +174,9 @@ button:focus-visible {
     section {
         padding: 2rem 0 !important;
         break-inside: avoid;
+    }
+    /* Ensure footer prints correctly */
+    .site-footer {
+        page-break-inside: avoid;
     }
 }

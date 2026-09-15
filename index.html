@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rabindra Khadka · Software Engineer & IT Professional</title>
-    <meta name="description" content="Rabindra Khadka — Software Engineer & IT Professional. B.IT graduate, Python, AWS, React, ITIL certified. Building reliable systems and cloud infrastructure.[...]" />
+    <meta name="description" content="Rabindra Khadka — Software Engineer & IT Professional. B.IT graduate, Python, AWS, React, ITIL certified. Building reliable systems and cloud infrastructure.[...]
     <meta property="og:title" content="Rabindra Khadka · Software Engineer & IT Professional" />
     <meta property="og:description" content="Software Engineer & IT Professional. B.IT graduate with Python, AWS, React, and cloud infrastructure skills." />
     <meta property="og:url" content="https://dansonjr.github.io" />
@@ -25,39 +25,46 @@
     <link rel="stylesheet" href="styles/responsive.css" />
 </head>
 <body>
+    <!-- Wrapper for sticky footer layout using flexbox -->
+    <div class="page-wrapper">
+        <!-- ===== NAVIGATION ===== -->
+        <header class="navbar" id="navbar">
+            <div class="nav-container">
+                <!-- Replaced text logo with profile image + name; fallback to AnimeMe.png if profile-photo.png is missing -->
+                <a href="#home" class="nav-logo" onclick="router.navigate('home'); return false;" aria-label="Go to home">
+                    <img class="nav-avatar" src="assets/profile-photo.png" alt="RK" onerror="this.onerror=null;this.src='AnimeMe.png'">
+                    <span class="nav-name">Rabindra Khadka</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#home" onclick="router.navigate('home'); return false;">Home</a>
+                    <a href="#about" onclick="router.navigate('about'); return false;">About</a>
+                    <a href="#skills" onclick="router.navigate('skills'); return false;">Skills</a>
+                    <a href="#projects" onclick="router.navigate('projects'); return false;">Projects</a>
+                    <a href="#experience" onclick="router.navigate('experience'); return false;">Experience</a>
+                    <a href="#contact" onclick="router.navigate('contact'); return false;">Contact</a>
+                </nav>
+            </div>
+        </header>
 
-    <!-- ===== NAVIGATION ===== -->
-    <header class="navbar" id="navbar">
-        <div class="nav-container">
-            <!-- Replaced text logo with profile image + name; fallback to AnimeMe.png if profile-photo.png is missing -->
-            <a href="#home" class="nav-logo" onclick="router.navigate('home'); return false;" aria-label="Go to home">
-                <img class="nav-avatar" src="assets/profile-photo.png" alt="RK" onerror="this.onerror=null;this.src='AnimeMe.png'">
-                <span class="nav-name">Rabindra Khadka</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-            <nav class="nav-menu" id="navMenu">
-                <a href="#home" onclick="router.navigate('home'); return false;">Home</a>
-                <a href="#about" onclick="router.navigate('about'); return false;">About</a>
-                <a href="#skills" onclick="router.navigate('skills'); return false;">Skills</a>
-                <a href="#projects" onclick="router.navigate('projects'); return false;">Projects</a>
-                <a href="#experience" onclick="router.navigate('experience'); return false;">Experience</a>
-                <a href="#contact" onclick="router.navigate('contact'); return false;">Contact</a>
-            </nav>
-        </div>
-    </header>
+        <!-- ===== PAGE CONTAINER ===== -->
+        <main id="app"></main>
 
-    <!-- ===== PAGE CONTAINER ===== -->
-    <main id="app"></main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Rabindra Khadka · Software Engineer & IT Professional</p>
-            <p class="footer-tech">Built with ❤️ on GitHub Pages — Powered by the GitHub API</p>
-        </div>
-    </footer>
+        <!-- ===== FOOTER ===== -->
+        <!-- Footer uses semantic HTML5 structure; positioned with flexbox to stick to bottom -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="container">
+                    <div class="footer-inner">
+                        <p class="footer-copyright">© 2026 Rabindra Khadka · Software Engineer & IT Professional</p>
+                        <p class="footer-credit">Built with ❤️ on GitHub Pages — Powered by the GitHub API</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <!-- ===== JAVASCRIPT ===== -->
     <script src="js/config.js"></script>

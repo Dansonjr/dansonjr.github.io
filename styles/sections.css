@@ -294,19 +294,60 @@ section {
 /* ========================================
    FOOTER
    ======================================== */
-footer {
-    background: rgba(17, 17, 17, 0.6);
-    border-top: 1px solid rgba(42, 42, 42, 0.5);
-    padding: 3rem 0; /* increased padding */
+.site-footer {
+    /* Sticky footer: only moves when content is longer than viewport */
+    margin-top: auto;
+    /* High-contrast blue background meeting WCAG AA standards */
+    background: var(--footer-bg);
+    border-top: 1px solid rgba(30, 58, 138, 0.5);
+    padding: 2.5rem 0;
     text-align: center;
-    backdrop-filter: blur(20px);
+    color: var(--footer-text);
+    position: relative;
+    z-index: 10;
 }
-footer p {
-    color: var(--text-secondary);
+
+.footer-content {
+    width: 100%;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-copyright {
+    color: var(--footer-text);
     font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
 }
-.footer-tech {
+
+.footer-credit {
+    color: var(--footer-text-light);
     font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 0.4rem;
+    line-height: 1.6;
+}
+
+/* Links in footer with high contrast and hover effects */
+.site-footer a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+    /* Ensure links remain visible and meet accessibility standards */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--footer-link-hover);
+    border-bottom-color: var(--footer-link-hover);
+}
+
+/* Icon styling in footer for consistency */
+.site-footer .footer-credit::before {
+    /* Emoji display optimization */
+    font-size: 1.1em;
 }
